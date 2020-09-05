@@ -201,3 +201,88 @@ const checkBtns = () => {
   btnNext.disabled = position <= -(itemsCount - slidesToShow) * itemWidth;
 };
 checkBtns();
+
+//services slider
+
+function servicesSlider() {
+  let position = 0;
+  let movePosition = 234;
+  const slider = document.querySelector(".services__slider");
+  const sliderRow = document.querySelector(".services__slider-row");
+  const sliderItems = document.querySelectorAll(".services__slider-item");
+  const btnPrev = document.querySelector(".services__button-prev");
+  const btnNext = document.querySelector(".services__button-next");
+  const lastPoint = (sliderItems.length - 1) * movePosition;
+
+  if (document.body.offsetWidth <= 420) {
+    let timer;
+    position = 0;
+    autoSlider();
+    function autoSlider() {
+      timer = setTimeout(function () {
+        if (position === -lastPoint) {
+          position = 0;
+        }
+        position -= movePosition;
+        sliderRow.style.left = position + "px";
+        autoSlider();
+      }, 7000);
+    }
+  }
+
+  btnPrev.onclick = function () {
+    if (position === 0) {
+      btnPrev.disabled;
+    } else {
+      position += movePosition;
+      sliderRow.style.left = position + "px";
+    }
+  };
+
+  btnNext.onclick = function () {
+    if (slider.clientWidth <= 250) {
+      if (position === -lastPoint) {
+        btnNext.disabled;
+      } else {
+        position -= movePosition;
+        sliderRow.style.left = position + "px";
+      }
+    } else if (slider.clientWidth <= 480) {
+      if (position === -lastPoint + movePosition) {
+        btnNext.disabled;
+      } else {
+        position -= movePosition;
+        sliderRow.style.left = position + "px";
+      }
+    } else if (slider.clientWidth <= 715) {
+      if (position === -lastPoint + movePosition * 2) {
+        btnNext.disabled;
+      } else {
+        position -= movePosition;
+        sliderRow.style.left = position + "px";
+      }
+    } else if (slider.clientWidth > 715) {
+      if (position === -lastPoint + movePosition * 3) {
+        btnNext.disabled;
+      } else {
+        position -= movePosition;
+        sliderRow.style.left = position + "px";
+      }
+    } else if (slider.clientWidth > 960) {
+      if (position === -lastPoint + movePosition * 4) {
+        btnNext.disabled;
+      } else {
+        position -= movePosition;
+        sliderRow.style.left = position + "px";
+      }
+    }
+  };
+}
+// position -= movePosition;
+// sliderRow.style.left = position + "px";
+
+//715
+//480
+//250
+
+servicesSlider();

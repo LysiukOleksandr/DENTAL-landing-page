@@ -249,7 +249,9 @@ button {
       transition: 0.6s all ease;
     }
     &-item {
-      background: url("../img/png/header-background.png") 50% / cover no-repeat;
+      min-width: 100%;
+      background: url("../img/png/header-background.png") no-repeat center /
+        cover;
 
       @media screen and(max-width: 500px) {
         background-position: 70% 0;
@@ -483,8 +485,20 @@ button {
     &:before {
       @include before(-16px, calc(50% - 25px));
     }
+    &:after {
+      content: "";
+      width: 275px;
+      height: 152px;
+      display: block;
+      position: absolute;
+      top: -30px;
+      left: calc(50% - 140px);
+      background: url("../img/png/services-background.png") no-repeat center;
+    }
     text-align: center;
-    font-size: 5.5rem;
+    @media screen and (max-width: 768px) {
+      // font-size: 3rem;
+    }
   }
 
   &__subtitle {
@@ -492,17 +506,45 @@ button {
     text-align: center;
     margin-top: 13px;
     margin: 13px auto 0 auto;
+    padding: 0 10px;
   }
 
   &__slider {
-    margin: 44px auto 0 auto;
     display: flex;
-    width: 945px;
-    overflow: hidden;
+    position: relative;
+    width: 960px;
+    margin: 44px auto 0 auto;
     padding: 10px;
+    @media screen and(max-width:1280px) {
+      width: 715px;
+    }
+    @media screen and(max-width:1140px) {
+      margin-left: calc(50% - 390px);
+    }
+    @media screen and(max-width:1040px) {
+      margin-left: calc(50% - 410px);
+    }
+    @media screen and(max-width:980px) {
+      width: 480px;
+      margin-left: calc(50% - 285px);
+    }
+    @media screen and(max-width:730px) {
+      margin-left: calc(50% - 295px);
+    }
+    @media screen and(max-width:690px) {
+      width: 250px;
+      margin-left: calc(50% - 175px);
+    }
+
+    &-wrapper {
+      overflow: hidden;
+      margin: 0 auto;
+    }
     &-row {
       display: flex;
       position: relative;
+      transition: 1s all ease;
+      left: 0;
     }
     &-item {
       flex: 0 0 200px;
@@ -546,16 +588,183 @@ button {
       @include text(1.8rem, 500, 21px, $blue);
     }
     &-block {
+      position: absolute;
+      width: 66px;
+      height: 280px;
+      background: $white;
+      box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      top: 20px;
+      right: -83px;
+      @media screen and(max-width:340px) {
+        right: -73px;
+      }
     }
   }
   &__button-prev {
+    top: calc(50% - 24.5px);
+    left: -40px;
+    @media screen and(max-width:470px) {
+      display: none;
+    }
   }
 
   &__button-next {
+    top: calc(50% - 24.5px);
+    right: -150px;
+    @media screen and(max-width:470px) {
+      display: none;
+    }
   }
 }
 
-.btn-next {
-}
 .btn-prev {
+  position: absolute;
+  width: 42px;
+  height: 49px;
+  border: 2px solid $blue-btn;
+  border-radius: 5px;
+  background: inherit;
+  cursor: pointer;
+  outline: none;
+}
+.btn-next {
+  position: absolute;
+  width: 42px;
+  height: 49px;
+  border: 2px solid $blue-btn;
+  border-radius: 5px;
+  background: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+.technology {
+  padding-bottom: 100px;
+  &-wrapper {
+    display: flex;
+    padding-right: 20px;
+    @media screen and(max-width:968px) {
+      flex-direction: column;
+      padding-left: 20px;
+    }
+    @media screen and(max-width:460px) {
+      padding: 0;
+    }
+  }
+  &__img {
+    width: 750px;
+    height: 667px;
+    @media screen and(max-width:1600px) {
+      margin-left: -100px;
+    }
+    @media screen and(max-width:1380px) {
+      margin-left: -200px;
+    }
+    @media screen and(max-width:1000px) {
+      margin-left: -320px;
+    }
+    @media screen and(max-width:968px) {
+      margin: 0 auto;
+      width: 415px;
+      height: 340px;
+      img {
+        height: 100%;
+      }
+    }
+    @media screen and(max-width:460px) {
+      width: 100%;
+      img {
+        width: 100%;
+        height: 280px;
+      }
+    }
+  }
+  &__info {
+    margin-left: 105px;
+    @media screen and(max-width:1380px) {
+      margin-left: 18px;
+    }
+    @media screen and(max-width:460px) {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }
+  &__title {
+    max-width: 400px;
+    margin-top: 46px;
+    @media screen and(max-width:1185px) {
+      margin-top: 25px;
+    }
+    @media screen and(max-width:968px) {
+      margin-top: 65px;
+    }
+
+    &:before {
+      @include before(-16px, 0);
+    }
+  }
+
+  &__subtitle {
+    max-width: 760px;
+    margin-top: 6px;
+    color: $b;
+  }
+
+  &__items {
+    margin-top: 25px;
+    @media screen and(max-width:1185px) {
+      margin-top: 15px;
+    }
+    @media screen and(max-width:968px) {
+      margin-top: 35px;
+    }
+  }
+  &__item {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    @media screen and(max-width:1220px) {
+      margin-top: 10px;
+    }
+    @media screen and(max-width:968px) {
+      margin-top: 20px;
+    }
+    @media screen and(max-width:460px) {
+      margin: 20px auto 0 auto;
+    }
+
+    &-img {
+      min-width: 70px;
+      height: 72px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &-text {
+      margin-left: 33px;
+      @media screen and(max-width:1185px) {
+        margin-left: 13px;
+      }
+      @media screen and(max-width:460px) {
+        margin-left: 33px;
+      }
+    }
+    &-title {
+      @include text(1.8rem, 700, 21px, $b);
+      @media screen and(max-width:460px) {
+        max-width: 175px;
+        margin-top: 20px;
+        text-align: center;
+      }
+    }
+    &-description {
+      @include text(1.4rem, 300, 20px, $brown);
+      max-width: 510px;
+      margin-top: 5px;
+      @media screen and(max-width:460px) {
+        display: none;
+      }
+    }
+  }
 }
