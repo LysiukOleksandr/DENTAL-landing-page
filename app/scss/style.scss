@@ -693,6 +693,16 @@ button {
   &__title {
     max-width: 400px;
     margin-top: 46px;
+    &:after {
+      content: "";
+      width: 275px;
+      height: 152px;
+      display: block;
+      position: absolute;
+      top: -30px;
+      left: 0;
+      background: url("../img/png/services-background.png") no-repeat center;
+    }
     @media screen and(max-width:1185px) {
       margin-top: 25px;
     }
@@ -764,6 +774,239 @@ button {
       margin-top: 5px;
       @media screen and(max-width:460px) {
         display: none;
+      }
+    }
+  }
+}
+
+.team {
+  &__wrapper {
+  }
+  &__title {
+    max-width: 299px;
+    margin: 0 auto;
+    &:before {
+      @include before(-16px, calc(50% - 25px));
+    }
+
+    &:after {
+      content: "";
+      width: 275px;
+      height: 152px;
+      display: block;
+      position: absolute;
+      top: -30px;
+      left: calc(50% - 140px);
+      background: url("../img/png/services-background.png") no-repeat center;
+    }
+  }
+
+  &__subtitle {
+    max-width: 930px;
+    padding: 5px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__slider {
+    max-width: 850px;
+    margin: 21px auto 0 auto;
+    position: relative;
+    @media screen and(max-width:978px) {
+      max-width: 550px;
+    }
+    @media screen and(max-width:680px) {
+      max-width: 250px;
+    }
+    &-wrapper {
+      overflow: hidden;
+    }
+    &-button-prev {
+      top: calc(50% - 24.5px);
+      left: -60px;
+      @media screen and(max-width:380px) {
+        display: none;
+      }
+    }
+
+    &-button-next {
+      top: calc(50% - 24.5px);
+      right: -60px;
+      @media screen and(max-width:380px) {
+        display: none;
+      }
+    }
+    &-row {
+      display: flex;
+      position: relative;
+      left: 0;
+      transition: 1s all ease;
+      div:not(:first-child) {
+        margin-left: 50px;
+      }
+    }
+
+    &-item {
+      max-width: 300px;
+      min-width: 250px;
+    }
+    &-img {
+      max-width: 300px;
+      img {
+        width: 100%;
+      }
+    }
+    &-name {
+      @include text(1.8rem, 500, 21px, $b);
+      margin-top: 15px;
+      text-align: left;
+    }
+    &-position {
+      @include text(1.8rem, 300, 21px, $b);
+      margin-top: 5px;
+    }
+  }
+}
+
+.about {
+  width: 100%;
+  padding-top: 100px;
+  overflow: hidden;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    @media screen and(max-width:780px) {
+      flex-direction: column-reverse;
+    }
+  }
+  &__info {
+    margin-left: 100px;
+    @media screen and(max-width:1550px) {
+      margin-left: 50px;
+    }
+    @media screen and(max-width:1080px) {
+      margin-left: 20px;
+    }
+  }
+
+  &__title {
+    max-width: 766px;
+    padding: 0 10px;
+    margin-top: 110px;
+    &:before {
+      top: -16px;
+      right: 0;
+      @media screen and(max-width:1470px) {
+        left: 0;
+      }
+      @media screen and(max-width:780px) {
+        left: 20px;
+      }
+    }
+    &:after {
+      content: "";
+      width: 275px;
+      height: 152px;
+      display: block;
+      position: absolute;
+      top: -30px;
+      right: 0;
+      background: url("../img/png/services-background.png") no-repeat center;
+      @media screen and(max-width:780px) {
+        right: 100px;
+      }
+      @media screen and(max-width:400px) {
+        top: -10px;
+        right: 30px;
+      }
+    }
+    @media screen and(max-width:1440px) {
+      margin-top: 50px;
+    }
+    @media screen and(max-width:780px) {
+      padding: 0 40px 0 20px;
+    }
+  }
+
+  &__subtitle {
+    max-width: 785px;
+    margin-top: 34px;
+    padding: 0 10px;
+    color: $b;
+    @media screen and(max-width:1080px) {
+      margin-top: 24px;
+    }
+    @media screen and(max-width:900px) {
+      margin-top: 10px;
+    }
+    @media screen and(max-width:780px) {
+      padding: 0 20px;
+    }
+  }
+
+  &__flex {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 34px;
+    margin-right: 36px;
+    @media screen and(max-width:1080px) {
+      margin-top: 24px;
+    }
+    @media screen and(max-width:900px) {
+      margin-top: 10px;
+    }
+    @media screen and(max-width:320px) {
+      margin-top: 20px;
+    }
+  }
+  &__signature {
+    max-width: 85px;
+    margin-right: 36px;
+  }
+  &__button {
+    width: 265px;
+    height: 70px;
+    background: $blue;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    cursor: pointer;
+    @include text(1.8rem, 400, 21px, $white);
+    @media screen and(max-width:1080px) {
+      width: 220px;
+    }
+    @media screen and(max-width:500px) {
+      width: 180px;
+      height: 60px;
+    }
+  }
+  &__img {
+    width: 750px;
+    height: 600px;
+    margin-left: 106px;
+    @media screen and(max-width:1550px) {
+      margin-left: 50px;
+    }
+    @media screen and(max-width:1440px) {
+      margin-right: -200px;
+    }
+    @media screen and(max-width:1080px) {
+      margin-left: 20px;
+    }
+    @media screen and(max-width:1000px) {
+      margin-right: -300px;
+    }
+    @media screen and(max-width:900px) {
+      margin-right: -400px;
+    }
+    @media screen and(max-width:780px) {
+      margin: 0;
+      width: 100%;
+      height: auto;
+      img {
+        width: 100%;
       }
     }
   }

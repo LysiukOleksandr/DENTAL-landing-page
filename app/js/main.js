@@ -280,9 +280,80 @@ function servicesSlider() {
 }
 // position -= movePosition;
 // sliderRow.style.left = position + "px";
-
-//715
-//480
-//250
-
 servicesSlider();
+
+function teamSlider() {
+  let position = 0;
+  let movePosition = 300;
+  const slider = document.querySelector(".team__slider");
+  const sliderRow = document.querySelector(".team__slider-row");
+  const sliderItems = document.querySelectorAll(".team__slider-item");
+  const btnPrev = document.querySelector(".team__slider-button-prev");
+  const btnNext = document.querySelector(".team__slider-button-next");
+  const lastPoint = (sliderItems.length - 1) * movePosition;
+
+  btnPrev.onclick = function () {
+    if (position === 0) {
+      btnPrev.disabled;
+    } else {
+      position += movePosition;
+      sliderRow.style.left = position + "px";
+    }
+  };
+
+  if (document.body.offsetWidth <= 380) {
+    let timer;
+    position = 0;
+    autoSlider();
+    function autoSlider() {
+      timer = setTimeout(function () {
+        if (position === -lastPoint) {
+          position = 0;
+        }
+        position -= movePosition;
+        sliderRow.style.left = position + "px";
+        autoSlider();
+      }, 5000);
+    }
+  }
+
+  btnNext.onclick = function () {
+    if (document.body.offsetWidth > 380 && document.body.offsetWidth <= 680) {
+      if (position === -lastPoint) {
+        nextBtn.disabled;
+      } else {
+        position -= movePosition;
+        sliderRow.style.left = position + "px";
+      }
+    } else if (
+      document.body.offsetWidth > 680 &&
+      document.body.offsetWidth <= 978
+    ) {
+      if (position === -lastPoint + movePosition) {
+        nextBtn.disabled;
+      } else {
+        position -= movePosition;
+        sliderRow.style.left = position + "px";
+      }
+    } else if (document.body.offsetWidth > 978) {
+      if (position === -lastPoint + movePosition * 2) {
+        nextBtn.disabled;
+      } else {
+        position -= movePosition;
+        sliderRow.style.left = position + "px";
+      }
+    }
+  };
+}
+
+teamSlider();
+// 978+ 680- 380-(btn)
+
+// if (document.body.offsetWidth <= 380) {
+//   if (position === -lastPoint) {
+//     btnNext.disabled;
+//   } else {
+//     position -= movePosition;
+//     sliderRow.style.left = position + "px";
+//   }
+// }
