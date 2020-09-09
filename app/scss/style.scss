@@ -1106,3 +1106,288 @@ button {
     }
   }
 }
+
+.location {
+  padding-top: 100px;
+  &__top {
+  }
+
+  &__title {
+    margin: 0 auto;
+    max-width: 637px;
+    text-align: center;
+    &:before {
+      @include before(-16px, calc(50% - 25px));
+    }
+    &:after {
+      content: "";
+      width: 275px;
+      height: 152px;
+      display: block;
+      position: absolute;
+      top: -30px;
+      left: calc(50% - 140px);
+      background: url("../img/png/services-background.png") no-repeat center;
+    }
+    @media screen and(max-width:500px) {
+      padding: 0 20px 0 20px;
+    }
+    @media screen and(max-width:370px) {
+      margin-top: 50px;
+    }
+  }
+
+  &__subtitle {
+    margin: 13px auto 20px auto;
+    max-width: 880px;
+    text-align: center;
+    @media screen and(max-width:500px) {
+      padding: 0 20px 0 20px;
+    }
+  }
+
+  &__bottom {
+    background: url("../img/png/map.png") center / cover no-repeat;
+  }
+  &__wrapper {
+    padding-top: 30px;
+    padding-bottom: 150px;
+  }
+  &__container-form {
+    padding-left: 20px;
+    padding-right: 20px;
+    @media screen and (max-width: 530px) {
+      padding: 0;
+    }
+  }
+  &__form {
+    max-width: 540px;
+    border-radius: 5px;
+    position: relative;
+    margin-top: 150px;
+    padding: 48px 35px 66px 35px;
+    display: flex;
+    flex-direction: column;
+    background: $blue;
+    @media screen and(max-width:530px) {
+      border-radius: 0;
+    }
+    @media screen and(max-width:370px) {
+      padding: 15px 35px 40px 35px;
+      margin-top: 0;
+    }
+    &-title {
+      @include text(3.6rem, 500, 42px, $white);
+      margin-bottom: 29px;
+    }
+    &-input {
+      max-width: 470px;
+      height: 45px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 5px;
+      background: none;
+      outline: none;
+      @include text(1.6rem, 400, 16px, $white);
+      margin-top: 12px;
+      padding-left: 14px;
+      &::placeholder {
+        @include text(1.4rem, 300, 16px, $white);
+        opacity: 0.5;
+      }
+      &:focus {
+        border: 1px solid $yellow;
+        transition: 0.3s all ease;
+      }
+    }
+    &-submit {
+      width: 230px;
+      height: 55px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 12px;
+      background: $yellow;
+      border: none;
+      border-radius: 5px;
+      @include text(1.8rem, 400, 21px, $black);
+      cursor: pointer;
+      @media screen and (max-width: 390px) {
+        width: 180px;
+      }
+    }
+    &-bottom {
+      margin-top: 22px;
+      margin-bottom: 18px;
+      display: flex;
+      justify-content: space-between;
+    }
+    &-text {
+      @include text(1.8rem, 300, 21px, $white);
+      max-width: 256px;
+      @media screen and (max-width: 980px) {
+        font-size: 1.5rem;
+      }
+    }
+    &-checkbox {
+      width: 35px;
+      height: 35px;
+      border: 1px solid $white;
+      background: inherit;
+      @media screen and (max-width: 580px) {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.footer {
+  padding: 0 10px;
+  @media screen and(max-width:370px) {
+    padding: 0;
+  }
+  &__wrapper {
+    padding: 100px 10px 20px 10px;
+    border-bottom: 1px solid $grey-light;
+    @media screen and(max-width:370px) {
+      padding-top: 50px;
+      border: none;
+      padding: 0;
+    }
+  }
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @media screen and (max-width: 840px) {
+      :nth-child(1) {
+        flex: 0 1 100%;
+      }
+    }
+    @media screen and(max-width:620px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    @media screen and(max-width:370px) {
+      display: none;
+    }
+  }
+  &__item {
+    margin: 0 10px;
+    @include text(1.8rem, 400, 21px, $b);
+    @media screen and (max-width: 840px) {
+      margin-top: 10px;
+    }
+    @media screen and(max-width:620px) {
+      text-align: center;
+    }
+
+    &-number-text {
+      font-size: 3rem;
+      line-height: 35px;
+    }
+    &-number-link {
+      display: flex;
+      justify-content: flex-end;
+      a {
+        color: $b;
+        text-decoration: underline;
+        @include text(1.8rem, 400, 21px, $b);
+      }
+    }
+    &-info {
+      margin-top: 33px;
+    }
+    &-email {
+      position: relative;
+      text-decoration: underline;
+      padding-left: 20px;
+      @include text(1.8rem, 400, 21px, $b);
+      &:before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -13px;
+        width: 26px;
+        height: 26px;
+        background: url("../img/png/email.png") center / cover no-repeat;
+      }
+    }
+    &-address {
+      position: relative;
+      margin-top: 14px;
+      padding-left: 20px;
+      @include text(1.8rem, 400, 21px, $b);
+      &:before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -13px;
+        width: 26px;
+        height: 26px;
+        background: url("../img/png/address.png") center / cover no-repeat;
+      }
+    }
+    &-privacy {
+      @include text(1.4rem, 400, 16px, $grey-light);
+      max-width: 140px;
+      margin-top: 22px;
+      @media screen and(max-width:620px) {
+        margin: 22px auto 0 auto;
+      }
+    }
+    &-title {
+      @include text(3rem, 400, 35px, $b);
+      &--empty {
+        opacity: 0;
+      }
+    }
+  }
+  &__list {
+    margin-top: 17px;
+    &-item {
+      max-width: 182px;
+      a {
+        @include text(1.8rem, 300, 26px, $b);
+      }
+    }
+  }
+  &__bottom {
+    padding: 22px 0 30px 0;
+    @media screen and(max-width:370px) {
+      padding: 0;
+    }
+    &-block {
+      display: none;
+      padding: 23px 20px;
+      justify-content: space-between;
+      align-items: center;
+      background: $blue;
+      @media screen and(max-width:370px) {
+        display: flex;
+      }
+    }
+    &-list {
+      display: flex;
+      li {
+        margin: 0 6px;
+        svg {
+          &:hover {
+            fill: $yellow;
+            transition: 0.5s all ease;
+          }
+        }
+      }
+    }
+    &-text {
+      display: block;
+      @include text(1.4rem, 400, 16px, $grey-light);
+      max-width: 430px;
+      margin: 0 auto;
+      text-align: center;
+      @media screen and(max-width:370px) {
+        display: none;
+      }
+    }
+  }
+}
