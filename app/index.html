@@ -125,11 +125,11 @@
         </div>
         <nav class="header__nav">
           <ul class="header__nav-list">
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Advantages</a></li>
-            <li><a href="#">Team</a></li>
-            <li><a href="#">Reviews</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#technology">Advantages</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#patients">Reviews</a></li>
+            <li><a href="#location">Contact</a></li>
           </ul>
           <div class="header__burger">
             <svg viewBox="0 0 800 600" width="80px" height="80px">
@@ -397,16 +397,18 @@
             </p>
           </div>
           <div class="header__cards-form">
-            <form class="header__form">
+            <form class="header__form" name="formTop">
               <h1 class="header__form-title">Appointment</h1>
               <input
                 class="header__form-input"
                 type="text"
+                name="name"
                 placeholder="Name"
               />
               <input
                 class="header__form-input"
-                type="text"
+                type="tel"
+                name="phone"
                 placeholder="Phone"
               />
               <input
@@ -426,7 +428,7 @@
         </div>
       </div>
     </header>
-    <section class="services">
+    <section class="services" id="services">
       <div class="container">
         <div class="services__wrapper">
           <h2 class="services__title title">Services</h2>
@@ -544,7 +546,7 @@
         </div>
       </div>
     </section>
-    <section class="technology">
+    <section class="technology" id="technology">
       <div class="technology-wrapper">
         <div class="technology__img">
           <img src="img/jpg/technology.jpg" alt="technology" />
@@ -611,7 +613,7 @@
       </div>
     </section>
 
-    <section class="team">
+    <section class="team" id="team">
       <div class="container">
         <div class="team__wrapper">
           <h2 class="team__title title">Proffesional team</h2>
@@ -702,7 +704,7 @@
       </div>
     </section>
 
-    <section class="about">
+    <section class="about" id="about">
       <div class="about__wrapper">
         <div class="about__info">
           <h2 class="about__title title">
@@ -732,7 +734,7 @@
         </div>
       </div>
     </section>
-    <section class="patients">
+    <section class="patients" id="patients">
       <div class="container">
         <div class="patients__wrapper">
           <h2 class="patients__title title">Reviews from our patients</h2>
@@ -780,7 +782,7 @@
       </div>
     </section>
 
-    <section class="location">
+    <section class="location" id="location">
       <div class="location__top">
         <div class="container">
           <h2 class="location__title title">
@@ -797,16 +799,18 @@
         <div class="container">
           <div class="location__wrapper">
             <div class="location__container-form" data-da="location__top,0,370">
-              <form class="location__form">
+              <form class="location__form" name="formBottom">
                 <h1 class="location__form-title">Appointment</h1>
                 <input
                   class="location__form-input"
                   type="text"
+                  name="name"
                   placeholder="Name"
                 />
                 <input
                   class="location__form-input"
-                  type="text"
+                  type="tel"
+                  name="phone"
                   placeholder="Phone"
                 />
                 <input

@@ -347,13 +347,3 @@ function teamSlider() {
 }
 
 teamSlider();
-// 978+ 680- 380-(btn)
-
-// if (document.body.offsetWidth <= 380) {
-//   if (position === -lastPoint) {
-//     btnNext.disabled;
-//   } else {
-//     position -= movePosition;
-//     sliderRow.style.left = position + "px";
-//   }
-// }
